@@ -1,0 +1,34 @@
+### Initialize an Elasticsearch index
+PUT http://localhost:9200/example_index
+Content-Type: application/json
+
+{}
+
+### Apply mapping to the index
+PUT http://localhost:9200/example_index/_mapping
+Content-Type: application/json
+
+{
+  "properties": {
+    "title": {
+      "type": "text"
+    },
+    "content": {
+      "type": "text"
+    },
+    "created_at": {
+      "type": "date"
+    },
+    "tags": {
+      "type": "keyword"
+    }
+  }
+}
+
+### Getting index settings
+GET http://localhost:9200/example_index/_settings
+Content-Type: application/json
+
+### Getting index mapping
+GET http://localhost:9200/example_index/_mapping
+Content-Type: application/json
