@@ -32,3 +32,30 @@ Content-Type: application/json
 ### Getting index mapping
 GET http://localhost:9200/example_index/_mapping
 Content-Type: application/json
+
+### Create a document in the index
+PUT http://localhost:9200/example_index/_doc/1
+Content-Type: application/json
+
+{
+    "title": "Updated Article",
+    "content": "Updated content",
+    "created_at": "2025-08-08T12:30:00Z",
+    "tags": ["update"]
+}
+
+### Get a document by ID
+GET http://localhost:9200/example_index/_doc/1
+
+### Search for documents in the index
+GET http://localhost:9200/employee/_search
+
+### Bulk insert documents into the index
+POST http://localhost:9200/example_index/_bulk
+Content-Type: application/x-ndjson
+
+< bulk.ndjson
+
+
+
+
